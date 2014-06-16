@@ -84,12 +84,6 @@ abstract class GormSpec extends Specification {
 		catch(e) {
 			// means it is not active, ignore
 		}
-		try {
-			getClass().classLoader.loadClass("net.sf.ehcache.CacheManager").getInstance()?.shutdown()
-		}
-		catch(e) {
-			// means there is no cache, ignore
-		}
 		gcl = null
 		grailsApplication = null
 		mockManager = null
@@ -187,7 +181,7 @@ dataSource {
 hibernate {
 	cache.use_second_level_cache=true
 	cache.use_query_cache=true
-	cache.region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
+	cache.region.factory_class = 'org.hibernate.testing.cache.CachingRegionFactory'
 }
 ''', "DataSource")
 	}
