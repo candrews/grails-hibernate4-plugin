@@ -46,7 +46,7 @@ grails.project.dependency.resolution = {
 
         compile "javax.validation:validation-api:1.1.0.Final" 
 
-        runtime "org.hibernate:hibernate-validator:5.0.3.Final"
+        runtime "org.hibernate:hibernate-validator:5.1.2.Final"
         runtime "org.hibernate:hibernate-ehcache:$hibernateVersion", {
             exclude group: 'net.sf.ehcache', name: 'ehcache-core'
             exclude group: 'org.jboss.logging', name:'jboss-logging-annotations'
